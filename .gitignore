@@ -15,3 +15,10 @@ __pycache__/
 build/
 dist/
 *.egg-info/
+
+
+# Jupyter notebooks
+app/notebook.ipynb
+
+# Instance folder (e.g., SQLite DBs)
+instance/
