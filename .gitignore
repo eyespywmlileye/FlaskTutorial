@@ -1,5 +1,6 @@
 # Python bytcode cache 
 __pycache__/
+app/routes/__pycache__/
 
 # python virtual environment
 .venv/

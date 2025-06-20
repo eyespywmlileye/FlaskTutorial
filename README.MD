@@ -109,7 +109,8 @@ FlaskTutorial/
 ├── .venv/
 └── app/
     ├── __init__.py
-    ├── routes.py
+    ├── routes/ 
+        ├── api.py
     ├── config.py
     ├── extensions.py
     └── models.py
