@@ -1,8 +1,4 @@
-Here’s a complete `README.md` file for your Flask project and tutorial, targeted at learners using **Windows**:
 
----
-
-````markdown
 # Flask Project and Tutorial
 
 Welcome to the Flask Project! This guide will walk you through the steps to set up and run the project on your local Windows machine.
