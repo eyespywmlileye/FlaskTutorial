@@ -3,6 +3,8 @@
 
 Welcome to the Flask Project! This guide will walk you through the steps to set up and run the project on your local Windows machine.
 
+`NB` I have purposely left the `.env` for you guys in this project. 
+
 ## 🚀 Getting Started
 
 ### 1. Clone the Repository
