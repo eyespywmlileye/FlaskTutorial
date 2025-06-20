@@ -107,6 +107,9 @@ FlaskTutorial/
 ├── requirements.txt
 ├── .gitignore
 ├── .venv/
+├── instance/
+    ├── app.db
+├── README.MD
 └── app/
     ├── __init__.py
     ├── routes/ 
