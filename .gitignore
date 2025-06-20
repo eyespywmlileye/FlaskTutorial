@@ -1,2 +1,17 @@
-__pycache__ 
-.venv
+# Python bytcode cache 
+__pycache__/
+
+# python virtual environment
+.venv/
+
+# Byte-compiled / optimized / DLL files
+*.py[cod]
+*$py.class
+
+# Test cache
+.pytest_cache/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
