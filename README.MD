@@ -6,6 +6,7 @@ Welcome to the Flask Project! This guide will walk you through the steps to set 
 `NB` I have purposely left the `.env` for you guys in this project. 
 
 ## 🚀 Getting Started
+---
 
 ### 1. Clone the Repository
 
@@ -124,3 +125,25 @@ FlaskTutorial/
 ---
 
 Happy coding! 💻🔥
+
+## Lesson 2: Getting our GET and POST requests setup 
+---
+
+We have now build GET and POST requests for our project in the `app/routes/api.py` file. 
+
+### Creating new items (POST request)
+
+To create new items in our database via POST api we used our command prompt and ran the following cURL code to the `http://127.0.0.1:5000/api/items` endpoint: 
+```
+# Windows
+
+curl -X POST http://127.0.0.1:5000/api/items -H "Content-Type: application/json" -d "{\"name\": \"Curl Item\", \"price\": 49.99, \"quantity\": 3, \"description\": \"Posted from curl\"}"
+```
+
+### Getting items (GET request)
+
+* When we wanted to get all of the items in the database, we sent a GET request via `http://127.0.0.1:5000/api/items` and it returned `ALL` items. 
+* To retrive an specifc item from our database we called `http://127.0.0.1:5000/api/item?item_id=1` where you specifed the `item_id` as a query paramter in the url and gave the id of the item you want to retireve in this example, item_id = 1 
+
+
+
