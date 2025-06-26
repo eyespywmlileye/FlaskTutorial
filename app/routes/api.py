@@ -62,5 +62,52 @@ def get_item(item_id):
     item = Items.query.get_or_404(item_id)
     return jsonify(item.to_dict()),200
     
+
+# PUT Reuqest to update na exsiting item resrouce by its ID 
+@api_bp.route("/items/<int:item_id>", methods = ["PUT"])
+def update_item(item_id): 
+    """updates an existing item by its ID
+
+    Args:
+        item_id (int): item id that we parse in the query param
+    """
+    # got the exisiting data for the db
+    item = Items.query.get_or_404(item_id)
     
-# 127:800:5000/api/items?item_id=4432
+    # got the data that the client wants us to update in the paylod
+    data = request.get_json()
+    
+    # checked that the data is not empty --> != {}
+    if not data: 
+        abort(400, description = "no data provided for update")
+    
+    # update fiels only if they are present in the request data. 
+    item.name = data.get('name', item.name )
+    item.description = data.get('description', item.description)
+    item.price = data.get('price', item.price)
+    item.quantity = data.get('quantity', item.quantity)
+    
+    # commit our update to the database
+    db.session.commit()
+    
+    return jsonify(item.to_dict()),200
+    
+# Delete endpoint --> remove an item resoruce 
+
+@api_bp.route('/items/<int:item_id>', methods =['DELETE'])
+def delete_item(item_id): 
+    """Delete an item from the investory by its ID
+
+    Args:
+        item_id (int): item id in the database
+    """
+
+    # Check if the data exists in the database 
+    item = Items.query.get_or_404(item_id)
+    db.session.delete(item)
+    db.session.commit()
+    
+    # Return a 204 No content status for successful deletion with no response body 
+    return jsonify({"message": 
+        "Item deleted successfuly"}), 200
+    
